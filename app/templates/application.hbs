@@ -1,8 +1,7 @@
-<div class="tab-bar">
-<a {{bindAttr class="showVisual::active"}} {{action displayCode}}>Code</a>
-<a {{bindAttr class="showVisual:active"}} {{action displayVisual}}>Visual</a>
 <button {{bind-attr disabled='hasItems'}} {{action 'runCode'}}>Run Code</button>
+
 {{#if hasItems}}
+
   There are deferred actions that need to be flushed.
 
   {{#if isPlaying}}
@@ -13,28 +12,23 @@
   {{/if}}
 {{/if}}
 
-
-</div>
-<div class="container">
-  {{#if showVisual}}
-    <div id="queues" class="cf">
+<div class="queue-container">
       {{#each queues}}
         {{run-loop-queue queue=this}}
       {{/each}}
+</div>
 
-      {{#if hasItems}}
-        {{current-queue-blip queueIndex=currentQueueIndex id="current-queue-blip"}}
-      {{/if}}
-    </div>
-
-    <h3>Logs:</h3>
-    <div id="log">
+    <div class="logs">
+        <h3>Logging:</h3>
+        <ul>
       {{#each logs}}
-        <p>{{this}}</p>
+        <li>{{this}}</li>
       {{/each}}
+      </ul>
     </div>
+      <div class="code">
+         <h3>Code:</h3>
 
-  {{else}}
-    {{textarea value=code id='code' disabled=hasItems}}
-  {{/if}}
+          {{textarea value=code id='code' disabled=hasItems}}
+      </div>
 </div>

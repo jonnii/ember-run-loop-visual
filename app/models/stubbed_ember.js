@@ -4,6 +4,8 @@ var StubbedEmber = Ember.create(Ember);
 
 var FakeRunLoop = Ember.Object.extend({
   currentQueueIndex: 0,
+  currentQueue:'sync',
+
   isPlaying: false,
   queues: Ember.run.queues.map(function(queueName) {
     return { name: queueName, actions: [] };
@@ -35,6 +37,7 @@ var FakeRunLoop = Ember.Object.extend({
       if (queues[index].actions.length) {
         // Backtrack.
         this.set('currentQueueIndex', index);
+        this.set('currentQueue', queues[index+1].name);
         return;
       }
     }
@@ -45,8 +48,11 @@ var FakeRunLoop = Ember.Object.extend({
       if (currentQueueIndex === queues.length) {
         this.set('isPlaying', false);
         this.set('currentQueueIndex', 0);
+        this.set('currentQueue', 'sync');
+
         this.set('hasItems', false);
       } else {
+        this.set('currentQueue', queues[index+1].name);
         this.set('currentQueueIndex', currentQueueIndex);
       }
       return;
