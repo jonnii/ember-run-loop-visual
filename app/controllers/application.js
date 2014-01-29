@@ -29,7 +29,17 @@ var DEFAULT_CODE = [
 
 var ApplicationController = Ember.ObjectController.extend({
   code: DEFAULT_CODE,
-  logs: []
+  logs: [],
+  showVisual: false,
+  actions:
+  {
+  	displayCode: function(){
+  		this.set('showVisual',false);
+  	},
+  	displayVisual: function(){
+  		this.set('showVisual',true);
+  	}
+  }
 });
 
 export default ApplicationController;
