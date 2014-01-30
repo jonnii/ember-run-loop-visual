@@ -18,7 +18,13 @@
       {{/each}}
 </div>
 
-    <div class="logs">
+    
+      <div class="code">
+         <h3>Code:</h3>
+
+          {{textarea value=code id='code' disabled=hasItems}}
+      </div>
+      <div class="logs">
         <h3>Logging:</h3>
         <ul>
       {{#each logs}}
@@ -26,9 +32,4 @@
       {{/each}}
       </ul>
     </div>
-      <div class="code">
-         <h3>Code:</h3>
-
-          {{textarea value=code id='code' disabled=hasItems}}
-      </div>
 </div>
