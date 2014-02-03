@@ -28,7 +28,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-  background-color:#faf4f1;
+  background-color:#f9f4f0 ;
 }
 ol, ul {
 	list-style: none;
@@ -74,6 +74,7 @@ html {
 }
 
 .queue-container{
+  padding-left:10px;
 }
 
 .run-loop-queue {
@@ -123,7 +124,7 @@ html {
   text-overflow:ellipsis;
   font-family: Consolas, monaco, monospace;
   font-size:10px;
-  
+  max-height:33px;
   
 }
 
@@ -132,9 +133,9 @@ html {
   margin-bottom:10px; 
   min-height:36px;
   float:left;
-  height:222px;
+  height:234px;
   overflow:hidden;
-  width:335px;
+  width:50%;
 }
 .logs h3{
   background-color:#ECECEC;
@@ -150,7 +151,7 @@ html {
   margin:0;
   padding:0;
   overflow:scroll;
-  height:204px;
+  height:214px;
 }
 
 .logs li{
@@ -167,8 +168,8 @@ html {
 .code {
    float:left;
   border:1px solid grey;
-  height:222px;
-    width:335px;
+  height:234px;
+    width:50%;
  overflow:hidden;
  border-right:0px;
  }
@@ -185,7 +186,7 @@ html {
 .code textarea{
   font-size:11px;
   font-family: Consolas, monaco, monospace;
-  height:204px;
+  height:214px;
   width:100%;
   padding:5px;
   background-color:#272822;
@@ -194,150 +195,28 @@ html {
   border:0;
 }
 
-.icons {
-    padding:0;
-    margin:0;
-    a:link, a:visited                      {border-bottom:1px solid #c55500; color:#c55500; text-decoration:none;}
-a:visited                              {border-bottom:1px solid #730800; color:#730800;}
-a:hover, a:focus, a:active             {border:0; color:#fff; background:#c55500;}
+.button-bar {
+  position:absolute;
+  right:10px;
+  top:5px;
 
-  
-  li {
-    position:relative;
-    z-index:1;
-    overflow:hidden;
-    list-style:none;
-    padding:0;
-    margin:0 0 0.25em;
-    float:left;
-    height:24px;
-    width:30px;
-  }
 
-  li a:link,
-  li a:visited {
-      display:block;
-      border:0;
-      padding-left:28px;
-      color:#c55500;
-  }
-
-  li a:hover,
-  li a:focus,
-  li a:active {
-      color:#730800;
-      background:transparent;
-  }
-
-  li:before,
-  li:after,
-  li a:before,
-  li a:after {
-      content:"";
-      position:absolute;
-      top:50%;
-      left:0;
-  }
-
-  .play a:after {
-    left:7px;
-    border:4px solid transparent;
-    border-left-color:#fff;
-    margin-top:-4px;
-    background:transparent;
 }
 
+h1.title{
+  color:#e1563f;
+  font-weight:bold;
+  font-size: 16px;
+  margin-bottom:20px;
+  padding:10px 0 0 10px;
 
-  .play-alt a:before {
-      left:2px;
-      border:8px solid transparent;
-      border-width:8px 12px;
-      border-left-color:#c55500;
-      margin-top:-8px;
-      background:transparent;
-  }
-
-  .play-alt a:hover:before,
-  .play-alt a:focus:before,
-  .play-alt a:active:before {
-      border-left-color:#730800;
-      background:transparent;
-  }
-
-
-
-  .stop a:after {
-      left:5px;
-      width:6px;
-      height:6px;
-      margin-top:-3px;
-      background:#fff;
-  }
-
-  /* Alternative style */
-
-  .stop-alt a:before {
-      left:1px;
-      width:14px;
-      height:14px;
-      margin-top:-7px;
-  }
-  .pause a:after {
-    left:5px;
-    width:2px;
-    height:8px;
-    border:2px solid #fff;
-    border-width:0 2px;
-    margin-top:-4px;
-    background:transparent;
 }
 
-  .pause-alt a:before {
-    left:2px;
-    width:4px;
-    height:14px;
-    border:4px solid #c55500;
-    border-width:0 4px;
-    margin-top:-7px;
-    background:transparent;
-  }
-
-  .pause-alt a:hover:before,
-  .pause-alt a:focus:before,
-  .pause-alt a:active:before {
-      border-color:#730800;
-      background:transparent;
-  }
-
-  .fforward a:before {
-    left:1px;
-    border:5px solid transparent;
-    border-width:5px 7px;
-    border-left-color:#c55500;
-    margin-top:-4px;
-    background:transparent;
-}
-
-  .fforward a:after {
-      left:7px;
-      border:5px solid transparent;
-      border-width:5px 7px;
-      border-left-color:#c55500;
-      margin-top:-4px;
-      background:transparent;
-  }
-
-  .fforward a:hover:before,
-  .fforward a:focus:before,
-  .fforward a:active:before {
-      border-left-color:#730800;
-      background:transparent;
-  }
-
-  .fforward a:hover:after,
-  .fforward a:focus:after,
-  .fforward a:active:after {
-      border-left-color:#730800;
-  }
-
+.bottom{
+  position:fixed;
+  bottom:10px;  
+  width:100%;
+  padding:0 10px;
+    height:234px;
+  overflow:hidden;
 }

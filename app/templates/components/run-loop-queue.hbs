@@ -1,11 +1,15 @@
 <h3>{{queue.name}}</h2>
-{{currentQueue}}
+{{currentQueue}} 
 <ul>
-  {{#each queue.actions}}
+  {{#each shortenedItems}}
   <li>
     <pre>{{fn}}</pre>
   </li>
   {{else}}
   <li>Empty!</li>
   {{/each}}
+  {{#if moreItems}}
+    <li style="font-weight:bold">{{moreItemsLength}} more...</li>
+  {{/if}}
+  <li>
 </ul>

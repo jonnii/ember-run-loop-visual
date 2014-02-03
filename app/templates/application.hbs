@@ -1,24 +1,29 @@
-<button {{bind-attr disabled='hasItems'}} {{action 'runCode'}}>Run Code</button>
-
+<h1 class="title">Run Loop Status: 
 {{#if hasItems}}
-
-  There are deferred actions that need to be flushed.
-
-  {{#if isPlaying}}
-    <button {{action 'pause'}}>Pause</button>
-  {{else}}
-    <button {{action 'play'}}>Play</button>
-    <button {{action 'step'}}>Step</button>
-  {{/if}}
+  Flushing {{currentQueue}} queue
+{{else}}
+  Not running
 {{/if}}
+<div class="button-bar">
+  <button {{bind-attr disabled='hasItems'}} {{action 'runCode'}}>Run Code</button>
+  {{#if hasItems}}
+    {{#if isPlaying}}
+      <button {{action 'pause'}}>Pause</button>
+    {{else}}
+      <button {{action 'play'}}>Play</button>
+    {{/if}}
+    <button {{action 'step'}} {{bind-attr disabled="isPlaying"}}>Step</button>
 
+  {{/if}}
+</div>
+</h1>
 <div class="queue-container">
       {{#each queues}}
         {{run-loop-queue queue=this}}
       {{/each}}
 </div>
 
-    
+<section class="bottom">    
       <div class="code">
          <h3>Code:</h3>
 
@@ -33,3 +38,4 @@
       </ul>
     </div>
 </div>
+</section>
