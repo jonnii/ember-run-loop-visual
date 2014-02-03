@@ -1,0 +1,14 @@
+{
+  "version": 3,
+  "file": "tests.js",
+  "sources": [
+    "tmp/transpiled/tests/acceptance/index_test.js",
+    "tmp/transpiled/tests/unit/routes/index_test.js"
+  ],
+  "names": [],
+  "mappings": "AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA,K;ACvBA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA,K",
+  "sourcesContent": [
+    "define(\"appkit/tests/acceptance/index_test\",\n  [\"appkit/routes/index\",\"appkit/app\"],\n  function(Index, App) {\n    \"use strict\";\n\r\n    module(\"Acceptances - Index\", {\r\n      setup: function(){\r\n        App.reset();\r\n      }\r\n    });\r\n\r\n    test(\"index renders\", function(){\r\n      expect(3);\r\n\r\n      visit('/').then(function(){\r\n        ok(exists(\"h2:contains('Welcome to Ember.js')\"));\r\n\r\n        var list = find(\"ul li\");\r\n        equal(list.length, 3);\r\n        equal(list.text(), \"redyellowblue\");\r\n      });\r\n    });\r\n\n  });",
+    "define(\"appkit/tests/unit/routes/index_test\",\n  [\"appkit/routes/index\",\"appkit/app\"],\n  function(Index, App) {\n    \"use strict\";\n\r\n    var route;\r\n\r\n    module(\"Unit - IndexRoute\", {\r\n      setup: function(){\r\n        route = App.__container__.lookup('route:index');\r\n      }\r\n    });\r\n\r\n    test(\"it exists\", function(){\r\n      ok(route);\r\n      ok(route instanceof Ember.Route);\r\n    });\r\n\r\n    test(\"#model\", function(){\r\n      deepEqual(route.model(), ['red', 'yellow', 'blue']);\r\n    });\r\n\n  });"
+  ]
+}
