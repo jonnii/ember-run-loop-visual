@@ -1,41 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>App Kit</title>
-  <link rel="stylesheet" href="/assets/app.css"    media="all">
-  <link rel="stylesheet" href="/vendor/qunit/qunit/qunit.css"   media="all">
-  <style>
-    #ember-testing-container {
-      position: absolute;
-      background: white;
-      bottom: 0;
-      right: 0;
-      width: 640px;
-      height: 384px;
-      overflow: auto;
-      z-index: 9999;
-      border: 1px solid #ccc;
-    }
-    #ember-testing {
-      zoom: 50%;
-    }
-  </style>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EmberRunLoopVisual Tests</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script src="/vendor/jquery/jquery.js"></script>
-  <script src="/vendor/handlebars/handlebars.js"></script>
-  <script src="/vendor/ember/index.js"></script>
-  <script src="/vendor/loader.js"></script>
+    {{content-for "head"}}
+    {{content-for "test-head"}}
 
-  <script src="/assets/app.js"></script>
-  <script src="/assets/templates.js"></script>
+    <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+    <link rel="stylesheet" href="{{rootURL}}assets/ember-run-loop-visual.css">
+    <link rel="stylesheet" href="{{rootURL}}assets/test-support.css">
 
-  <script src="/vendor/qunit/qunit/qunit.js"></script>
-</head>
-<body>
-  <div id="qunit"></div>
-  <div id="qunit-fixture"></div>
-  <script src="/tests/test_helper.js"></script>
-  <script src="/tests/tests.js"></script>
-  <script src="/tests/test_loader.js"></script>
-</body>
+    {{content-for "head-footer"}}
+    {{content-for "test-head-footer"}}
+  </head>
+  <body>
+    {{content-for "body"}}
+    {{content-for "test-body"}}
+
+    <script src="/testem.js" integrity=""></script>
+    <script src="{{rootURL}}assets/vendor.js"></script>
+    <script src="{{rootURL}}assets/test-support.js"></script>
+    <script src="{{rootURL}}assets/ember-run-loop-visual.js"></script>
+    <script src="{{rootURL}}assets/tests.js"></script>
+
+    {{content-for "body-footer"}}
+    {{content-for "test-body-footer"}}
+  </body>
 </html>
