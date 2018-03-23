@@ -1,13 +1,14 @@
-import Resolver from 'resolver';
-import router from 'appkit/router';
+import Application from '@ember/application';
+import Resolver from './resolver';
+import loadInitializers from 'ember-load-initializers';
+import config from './config/environment';
 
-var App = Ember.Application.create({
-  modulePrefix: 'appkit', // TODO: loaded via config
-  Resolver: Resolver,
-  Router: Ember.Router.extend({
-    router: router,
-    location: 'none'
-  })
+const App = Application.extend({
+  modulePrefix: config.modulePrefix,
+  podModulePrefix: config.podModulePrefix,
+  Resolver
 });
+
+loadInitializers(App, config.modulePrefix);
 
 export default App;
